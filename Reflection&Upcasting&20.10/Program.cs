@@ -18,26 +18,20 @@ class Program
         {
 
             Type type = fruit.GetType();
-            Console.WriteLine("Type: " + fruit.GetType().Name);
-            FieldInfo[] basefields = typeof(Fruit).GetFields(BindingFlags.NonPublic | BindingFlags.Instance);  //base classin fieldlerin
-            foreach (FieldInfo field in basefields)
-            {
-
-                Console.WriteLine($"{field.Name}: {field.GetValue(fruit)}");
-
-            }
-            FieldInfo[] fields = fruit.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance);  
+            Console.WriteLine($"Type: {fruit.GetType().Name}");
+            FieldInfo[] fields = fruit.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
             foreach (FieldInfo field in fields)
             {
 
                 Console.WriteLine($"{field.Name}: {field.GetValue(fruit)}");
 
+
             }
-            fruit.Taste();
-            Console.WriteLine("--------------------");
+                fruit.Taste();
+                Console.WriteLine("--------------------");
         }
 
-        Console.ReadLine();
+            Console.ReadLine();
 
     }
 }
